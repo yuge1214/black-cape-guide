@@ -110,7 +110,7 @@ export default function LogoReveal({ show, onStart }: LogoRevealProps) {
                 }`}
               >
                 <img
-                  src="/tsg-0324(1).png?v=2"
+                  src="./tsg-0324(1).png?v=2"
                   alt="黑蓑影卫"
                   className="h-20 w-20 object-contain sm:h-24 sm:w-24"
                   style={{
