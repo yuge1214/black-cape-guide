@@ -152,7 +152,7 @@ export default function Home() {
                 <div className="relative">
                   <div className="mx-auto h-32 w-32 rounded-full metal-border-strong p-1 overflow-hidden animate-glow-pulse">
                     <img
-                      src="./头像1.jpg"
+                      src="./avatar.jpg"
                       alt="头像"
                       className="h-full w-full object-cover rounded-full"
                     />

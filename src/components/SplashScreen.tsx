@@ -4,7 +4,7 @@ export default function SplashScreen() {
       <div className="flex flex-col items-center gap-8">
         <div className="relative h-24 w-24">
           <img
-            src="./吃西瓜.gif"
+            src="./loading.gif"
             alt="加载中"
             className="h-full w-full object-contain"
           />
