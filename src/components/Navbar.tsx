@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useNavContext } from "@/context/NavContext";
 
 const navLinks = [
+  { href: "/", label: "首页" },
   { href: "/about", label: "关于我" },
   { href: "/#main-content", label: "最新攻略" },
   { href: "/admin", label: "后台管理" },
@@ -15,6 +16,11 @@ export default function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { showNavLinks } = useNavContext();
+
+  const handleReturnToLanding = () => {
+    sessionStorage.removeItem("hasStarted");
+    window.location.href = "/";
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/60 backdrop-blur-xl">
@@ -45,6 +51,13 @@ export default function Navbar() {
                 />
               </Link>
             ))}
+            <button
+              onClick={handleReturnToLanding}
+              className="ml-2 rounded-md px-4 py-2 text-sm font-medium text-zinc-400 transition-all hover:text-foreground hover:bg-metal-dark border border-border/50 hover:border-accent/50"
+              title="返回初始页面"
+            >
+              返回初始页面
+            </button>
           </div>
         )}
 
@@ -97,6 +110,15 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                handleReturnToLanding();
+              }}
+              className="mt-2 rounded-md px-4 py-3 text-sm font-medium text-zinc-400 transition-all hover:bg-metal-dark hover:text-foreground border border-border/50"
+            >
+              返回初始页面
+            </button>
           </div>
         </div>
       )}
